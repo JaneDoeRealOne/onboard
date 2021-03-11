@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { compose } from 'recompose';
 
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
@@ -40,10 +41,10 @@ class SignUpFormBase extends Component {
 
   onSubmit = event => {
     const { username, email, passwordOne, isAdmin } = this.state;
-    const roles = [];
+    const roles = {};
 
     if (isAdmin) {
-      roles.push(ROLES.ADMIN);
+      roles[ROLES.ADMIN] = ROLES.ADMIN;
     }
 
     this.props.firebase
@@ -153,9 +154,11 @@ const SignUpLink = () => (
   </p>
 );
 
-const SignUpForm = withRouter(withFirebase(SignUpFormBase));
+const SignUpForm = compose(
+  withRouter,
+  withFirebase,
+)(SignUpFormBase);
 
 export default SignUpPage;
 
 export { SignUpForm, SignUpLink };
-    

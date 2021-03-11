@@ -4,8 +4,7 @@ import { compose } from 'recompose';
 import {
   AuthUserContext,
   withAuthorization,
-  withEmailVerification,
-} from '../Session';
+  } from '../Session';
 import { withFirebase } from '../Firebase';
 import { PasswordForgetForm } from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
@@ -18,15 +17,7 @@ const SIGN_IN_METHODS = [
   {
     id: 'google.com',
     provider: 'googleProvider',
-  },
-  {
-    id: 'facebook.com',
-    provider: 'facebookProvider',
-  },
-  {
-    id: 'twitter.com',
-    provider: 'twitterProvider',
-  },
+  }
 ];
 
 const AccountPage = () => (
@@ -226,6 +217,5 @@ const LoginManagement = withFirebase(LoginManagementBase);
 const condition = authUser => !!authUser;
 
 export default compose(
-  withEmailVerification,
   withAuthorization(condition),
 )(AccountPage);

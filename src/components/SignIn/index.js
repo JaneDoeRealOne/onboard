@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 
 import { SignUpLink } from '../SignUp';
-//import { PasswordForgetLink } from '../PasswordForget';
+import { PasswordForgetLink } from '../PasswordForget';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
@@ -12,6 +12,7 @@ const SignInPage = () => (
     <h1>SignIn</h1>
     <SignInForm />
     <SignInGoogle />
+    <PasswordForgetLink />
     <SignUpLink />
   </div>
 );
@@ -105,7 +106,7 @@ class SignInGoogleBase extends Component {
         return this.props.firebase.user(socialAuthUser.user.uid).set({
           username: socialAuthUser.user.displayName,
           email: socialAuthUser.user.email,
-          roles: [],
+          roles: {},
         });
       })
       .then(() => {
@@ -151,4 +152,3 @@ const SignInGoogle = compose(
 export default SignInPage;
 
 export { SignInForm, SignInGoogle };
-    
