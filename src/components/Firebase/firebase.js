@@ -15,6 +15,7 @@ class Firebase {
     constructor() {
         app.initializeApp(config);
 
+        this.emailAuthProvider = app.auth.EmailAuthProvider;
         this.auth = app.auth();
         this.db = app.database();
 
@@ -37,12 +38,17 @@ class Firebase {
  
   doPasswordReset = email => this.auth.sendPasswordResetEmail(email);
 
+  doSendEmailVerification = () =>
+    this.auth.currentUser.sendEmailVerification({
+      url: process.env.REACT_APP_CONFIRMATION_EMAIL_REDIRECT,
+    });
+
   doPasswordUpdate = password =>
     this.auth.currentUser.updatePassword(password);
 
 
     // *** Merge Auth and DB User API *** //
-  onAuthUserListener = (next, fallback) =>
+    onAuthUserListener = (next, fallback) =>
     this.auth.onAuthStateChanged(authUser => {
       if (authUser) {
         this.user(authUser.uid)
@@ -52,13 +58,15 @@ class Firebase {
 
             // default empty roles
             if (!dbUser.roles) {
-              dbUser.roles = {};
+              dbUser.roles = [];
             }
 
             // merge auth and db user
             authUser = {
               uid: authUser.uid,
               email: authUser.email,
+              emailVerified: authUser.emailVerified,
+              providerData: authUser.providerData,
               ...dbUser,
             };
 
@@ -69,11 +77,11 @@ class Firebase {
       }
     });
 
-    //*** User API ***
+  // *** User API ***
+
   user = uid => this.db.ref(`users/${uid}`);
 
   users = () => this.db.ref('users');
-    
 }
 
 export default Firebase;

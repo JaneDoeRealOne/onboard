@@ -12,7 +12,6 @@ const withAuthentication = Component => {
         authUser: JSON.parse(localStorage.getItem('authUser')),
       };
     }
-    
 
     componentDidMount() {
       this.listener = this.props.firebase.onAuthUserListener(
@@ -26,11 +25,11 @@ const withAuthentication = Component => {
         },
       );
     }
-  
+
     componentWillUnmount() {
-        this.listener();
+      this.listener();
     }
-  
+
     render() {
       return (
         <AuthUserContext.Provider value={this.state.authUser}>
@@ -40,9 +39,7 @@ const withAuthentication = Component => {
     }
   }
 
-  
   return withFirebase(WithAuthentication);
 };
-  
+
 export default withAuthentication;
- 
