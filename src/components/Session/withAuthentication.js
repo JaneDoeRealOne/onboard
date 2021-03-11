@@ -8,59 +8,41 @@ const withAuthentication = Component => {
     constructor(props) {
       super(props);
 
-        this.state = {
-          authUser: null,
-        };
+      this.state = {
+        authUser: JSON.parse(localStorage.getItem('authUser')),
+      };
     }
+    
 
     componentDidMount() {
-      this.listener = this.props.firebase.auth.onAuthStateChanged(
+      this.listener = this.props.firebase.onAuthUserListener(
         authUser => {
-          if (authUser) {
-            this.props.firebase
-            .user(authUser.uid)
-            .once('value')
-            .then(snapshot => {
-              const dbUser = snapshot.val();
-
-              // default empty roles
-              if (!dbUser.roles) {
-                dbUser.roles = {};
-            
-              }
-
-              // merge auth and db user
-              authUser = {
-                uid: authUser.uid,
-                email: authUser.email,
-                ...dbUser,
-              };
-               
-              this.setState({ authUser });
-            });
-        } else {
+          localStorage.setItem('authUser', JSON.stringify(authUser));
+          this.setState({ authUser });
+        },
+        () => {
+          localStorage.removeItem('authUser');
           this.setState({ authUser: null });
-        }
-      },
-    );
-  }  
-           
-    componentWillUnmount() {
-      this.listener();
+        },
+      );
     }
-
+  
+    componentWillUnmount() {
+        this.listener();
+    }
+  
     render() {
       return (
         <AuthUserContext.Provider value={this.state.authUser}>
           <Component {...this.props} />
-          </AuthUserContext.Provider>
+        </AuthUserContext.Provider>
       );
     }
   }
 
-   return withFirebase(WithAuthentication);
+  
+  return withFirebase(WithAuthentication);
 };
-
+  
 export default withAuthentication;
-    
  

@@ -48,7 +48,7 @@ class SignUpFormBase extends Component {
           .set({
             username,
             email,
-            roles //for Admin role
+            roles,
           })
           .then(() => {
             this.setState({ ...INITIAL_STATE });
@@ -69,8 +69,7 @@ class SignUpFormBase extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  //admin check box
-  onChangeCheckBox= event => {
+  onChangeCheckbox = event => {
     this.setState({ [event.target.name]: event.target.checked });
   };
 
@@ -121,7 +120,6 @@ class SignUpFormBase extends Component {
           placeholder="Confirm Password"
         />
 
-        {/*Admin label */}
         <label>
           Admin:
           <input
@@ -131,7 +129,6 @@ class SignUpFormBase extends Component {
             onChange={this.onChangeCheckbox}
           />
         </label>   
-
         <button disabled={isInvalid} type="submit">
           Sign Up
         </button>
