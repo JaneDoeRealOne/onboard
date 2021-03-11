@@ -1,0 +1,91 @@
+.footer-container {
+  width: 100%;
+  background-color: rgb(28, 27, 27);
+  padding: 20px; 
+}
+
+.footer-wrapper{
+color: #fff;
+padding: 20px;
+display: flex; 
+justify-content: space-between;
+}
+
+.brand-section{
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+  align-items: center;
+}
+
+.footer-logo{
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.brand-section p {
+  font-size: 18px;
+  padding: 4px;
+}
+
+.social-media-wrapper{
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+
+.contact-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+  align-items: center;
+}
+
+.copy-text{
+  color:rgb(62, 61, 61)
+}
+
+.policy {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 8px;
+}
+
+
+
+
+
+.social-container {
+  background: #eee;
+  padding: 25px 50px;
+}
+
+a.social {
+  margin: 0 1rem;
+  transition: transform 250ms;
+  display: inline-block;
+}
+
+a.social:hover {
+  transform: translateY(-2px);
+}
+
+a.youtube {
+  color: #eb3223;
+}
+
+a.facebook {
+  color: #4968ad;
+}
+
+a.instagram {
+  color: rgb(223, 57, 6);
+}
