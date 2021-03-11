@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import './signin.css';
+import DarkLogo from '../assets/KYH-dark-logo.png';
 
 const SignInPage = () => (
-  <div>
-    <h1>SignIn</h1>
+  <>
     <SignInForm />
-    <SignInGoogle />  
-  </div>
+    <SignInGoogle />
+  </>
 );
 
 const INITIAL_STATE = {
@@ -35,7 +35,7 @@ class SignInFormBase extends Component {
         this.setState({ ...INITIAL_STATE });
         this.props.history.push(ROUTES.HOME);
       })
-        .catch(error => {
+      .catch(error => {
         this.setState({ error });
       });
 
@@ -48,31 +48,43 @@ class SignInFormBase extends Component {
 
   render() {
     const { email, password, error } = this.state;
-
+    // const { error } = this.state;
     const isInvalid = password === '' || email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="email"
-          value={email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          name="password"
-          value={password}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Password"
-        />
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
-
-        {error && <p>{error.message}</p>}
-      </form>
+      <section className='login'>
+        <form className='login--container' onSubmit={this.onSubmit}>
+          <div className='logo--container'>
+            <img src={DarkLogo} className='form--logo' alt='logotype' />
+          </div>
+          <h1 className='form--h1'>Logga in</h1>
+          <label>Email</label>
+          <input
+            name="email"
+            value={email}
+            onChange={this.onChange}
+            type="text"
+            placeholder="Ange din email"
+          />
+          <label>Lösenord</label>
+          <input
+            name="password"
+            value={password}
+            onChange={this.onChange}
+            type="password"
+            placeholder="Ange ditt lösenord"
+          />
+          <div className='btn--section'>
+            <button disabled={isInvalid} type="submit" className='form--btn'>
+              LOGGA IN
+          </button>
+            <form onSubmit={this.onSubmit}>
+              <button type="submit" className='form--btn--google'>LOGGA IN MED GOOGLE</button>
+            </form>
+            {error && <p>{error.message}</p>}
+          </div>
+        </form>
+      </section>
     );
   }
 }
@@ -123,7 +135,7 @@ class SignInGoogleBase extends Component {
     );
   }
 }
- 
+
 const SignInForm = compose(
   withRouter,
   withFirebase,
@@ -137,4 +149,3 @@ const SignInGoogle = compose(
 export default SignInPage;
 
 export { SignInForm, SignInGoogle };
-    
