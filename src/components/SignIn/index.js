@@ -76,11 +76,8 @@ class SignInFormBase extends Component {
           />
           <div className='btn--section'>
             <button disabled={isInvalid} type="submit" className='form--btn'>
-              LOGGA IN
-          </button>
-            <form onSubmit={this.onSubmit}>
-              <button type="submit" className='form--btn--google'>LOGGA IN MED GOOGLE</button>
-            </form>
+              Logga in
+            </button>             
             {error && <p>{error.message}</p>}
           </div>
         </form>
@@ -128,7 +125,10 @@ class SignInGoogleBase extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <button type="submit">Sign In with Google</button>
+        <button type="submit" class="button-google">
+        <img src='icons/google.svg' alt='google login' className='googleIcon'></img>
+          <span className='googleButtonText'>Logga in med Google</span>
+        </button>
 
         {error && <p>{error.message}</p>}
       </form>
