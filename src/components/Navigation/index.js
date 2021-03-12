@@ -79,7 +79,7 @@ const NavigationNonAuth = () => (
     <LI>
     <Link to='/' className='navbar-logo' >
             <div>
-              <img src={Logo} className='logo' alt='logotype'  width='35%'/>
+              <img src={Logo} className='logo' alt='logotype'  width='39%'/>
             </div>
     </Link>
     </LI>
