@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import '../../index.css';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
 import { AuthUserContext } from '../Session';
@@ -31,8 +31,10 @@ const LI = styled.li`
 `;
 
 const NavBar = styled.div`
-  height: 25px;
+  /* height: 25px; */
   a {
+    width: 50%;
+    right: 0;
     font-family: "Roboto", sans-serif;
     color: #fff;
     padding: 10px;
@@ -48,6 +50,7 @@ const NavBar = styled.div`
   }
 `;
 
+
 const Navigation = () => (
   <NavBar>
     <AuthUserContext.Consumer>
@@ -55,7 +58,7 @@ const Navigation = () => (
     </AuthUserContext.Consumer>
   </NavBar>
 );
-  
+
 
 const NavigationAuth = () => (
   <UL>
@@ -77,16 +80,72 @@ const NavigationAuth = () => (
 const NavigationNonAuth = () => (
   <UL>
     <LI>
-    <Link to='/' className='navbar-logo' >
-            <div>
-              <img src={Logo} className='logo' alt='logotype'  width='39%'/>
-            </div>
-    </Link>
+      <Link to='/' className='navbar-logo' >
+        <div>
+          <img src={Logo} className='logo' alt='logotype' width='39%' />
+        </div>
+      </Link>
     </LI>
     <LI>
       <Link to={ROUTES.SIGN_IN}>Logga In</Link>
     </LI>
-    </UL>
-  );
+  </UL>
+);
+// const Navigation = () => (
+//   <>
+//     <nav className='navbar'>
+//       <AuthUserContext.Consumer>
+//         {authUser => (authUser ? <NavigationAuth /> : <NavigationNonAuth />)}
+//         <div className='navbar-container'>
+//           <Link
+//             to='/'
+//             className='navbar-logo'
+//             src={Logo}
+//             className='logo'
+//             alt='logotype' />
+//         </div>
+//         <div className='menu-icon' />
+//         <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+//       </AuthUserContext.Consumer>
+//     </nav>
+//   </>
+// );
+
+
+// const NavigationAuth = () => (
+//   <ul className='nav-menu'>
+//     <li className='nav-item'>
+//       <Link
+//         to={ROUTES.HOME}
+//         className='nav-links'>Hem
+//       </Link>
+
+//     </li>
+//     <li>
+//       <Link to={ROUTES.FAQ}>FAQ</Link>
+//     </li>
+//     <li>
+//       <Link to={ROUTES.NEWS}>Nyheter</Link>
+//     </li>
+//     <li>
+//       <SignOutButton />
+//     </li>
+//   </ul>
+// );
+
+// const NavigationNonAuth = () => (
+//   <ul>
+//     <li>
+//       <Link to='/' className='navbar-logo' >
+//         <div>
+//           <img src={Logo} className='logo' alt='logotype' width='39%' />
+//         </div>
+//       </Link>
+//     </li>
+//     <li>
+//       <Link to={ROUTES.SIGN_IN}>Logga In</Link>
+//     </li>
+//   </ul>
+// );
 
 export default Navigation;
