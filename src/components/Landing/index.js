@@ -1,7 +1,9 @@
 import React from 'react';
+import { Button } from '../Button/Button';
 import './landing.css';
+import '../../index.css';
 
-function Landing() { 
+function Landing() {
   return (
     <div className='hero-container'>
       {/* <div className='text-container'> */}
@@ -10,17 +12,17 @@ function Landing() {
       {/* </div> */}
       <div className='hero-btns'>
         <a href='https://www.youtube.com/embed/euiGHk8dIPI' target="_blank" rel="noopener noreferrer" >
-          <button
-            className='btns movie--btn'
-            buttonstyle='btn--primary'
-            buttonsize='btn--large'
+          <Button
+            className='btns'
+            buttonStyle='btn--outline'
+            buttonSize='btn--large'
           >
             SE VIDEO <i className='far fa-play-circle' />
-          </button>
+          </Button>
         </a>
       </div>
     </div>
-    
+
   );
 }
 

@@ -1,6 +1,6 @@
 .navbar {
   background: linear-gradient(90deg, #1c1b1b 0%, #1a1717 100%);
-  height: 80px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,9 +13,15 @@
 .navbar-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 80px;
+  align-items: space-between;
   max-width: 1500px;
+}
+
+.nav-wrap {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  width: 100%;
 }
 
 .logo{
@@ -40,6 +46,15 @@
 
 .nav-item {
   height: 80px;
+  text-decoration: none;
+  display: flex; 
+  align-items: center; 
+  padding: 0 4rem 0 4rem;
+}
+
+.nav-button {
+  display: flex; 
+  justify-content: flex-end;
 }
 
 .nav-links {

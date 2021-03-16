@@ -2,13 +2,21 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 import { withFirebase } from '../Firebase';
+import { FirebaseContext } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import './signin.css';
 import DarkLogo from '../assets/KYH-dark-logo.png';
+import Dropdown from '../Dropdown/Dropdown';
+import { Button } from '../Button/Button';
+
 
 const SignInPage = () => (
   <>
-    <SignInForm />
+    {/* <SignInForm /> */}
+    <FirebaseContext.Consumer>
+      {firebase => <SignInForm firebase={firebase} />}
+    </FirebaseContext.Consumer>
+    <Dropdown />
     <SignInGoogle />
   </>
 );
@@ -53,9 +61,15 @@ class SignInFormBase extends Component {
 
     return (
       <section className='login'>
-        <form className='login--container' onSubmit={this.onSubmit}>
+        <form
+          className='login--container'
+          onSubmit={this.onSubmit}>
           <div className='logo--container'>
-            <img src={DarkLogo} className='form--logo' alt='logotype' />
+            <img
+              src={DarkLogo}
+              className='form--logo'
+              alt='logotype'
+            />
           </div>
           <h1 className='form--h1'>Logga in</h1>
           <label>Email</label>
@@ -74,12 +88,20 @@ class SignInFormBase extends Component {
             type="password"
             placeholder="Ange ditt lösenord"
           />
+          {/* <br />
+          <Dropdown /> */}
           <div className='btn--section'>
-            <button disabled={isInvalid} type="submit" className='form--btn'>
+            <Button
+              disabled={isInvalid}
+              type="submit"
+              className='form--btn'>
               Logga in
-            </button>             
+            </Button>
             {error && <p>{error.message}</p>}
           </div>
+          {/* <div className='btn--section'>
+            <SignInGoogle disabled={isInvalid} type="submit" className='form--btn' />
+          </div> */}
         </form>
       </section>
     );
@@ -126,7 +148,7 @@ class SignInGoogleBase extends Component {
     return (
       <form onSubmit={this.onSubmit}>
         <button type="submit" class="button-google">
-        <img src='icons/google.svg' alt='google login' className='googleIcon'></img>
+          <img src='icons/google.svg' alt='google login' className='googleIcon'></img>
           <span className='googleButtonText'>Logga in med Google</span>
         </button>
 
