@@ -15,8 +15,7 @@ const SignInPage = () => (
     <FirebaseContext.Consumer>
       {firebase => <SignInForm firebase={firebase} />}
     </FirebaseContext.Consumer>
-    {/* <Dropdown />
-    <SignInGoogle /> */}
+    <SignInGoogle /> 
   </>
 );
 
@@ -99,9 +98,7 @@ class SignInFormBase extends Component {
             </button>
             {error && <p>{error.message}</p>}
           </div>
-          {/* <div className='btn--section'>
-            <SignInGoogle disabled={isInvalid} type="submit" className='form--btn' />
-          </div> */}
+           
         </form>
       </section>
     );
