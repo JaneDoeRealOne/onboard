@@ -62,7 +62,7 @@ function Dropdown() {
 
   return (
     <div className='dropdown-container'>
-      <h1>Vänligen välj stad och utbildning nedan</h1>
+      <h1>Vilken utbildning är du antagen till?</h1>
       <div className='react-select-container'>
         {/* <Select
           styles={customStyles}

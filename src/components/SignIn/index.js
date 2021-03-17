@@ -6,7 +6,7 @@ import { FirebaseContext } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import './signin.css';
 import DarkLogo from '../assets/KYH-dark-logo.png';
-import Dropdown from '../Dropdown/Dropdown';
+// import Education from '../Educations/index';
 
 
 const SignInPage = () => (
@@ -40,7 +40,8 @@ class SignInFormBase extends Component {
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.HOME);
+        this.props.history.push(ROUTES.EDUCATION_SELECT);
+        // this.props.history.push(ROUTES.HOME);
       })
       .catch(error => {
         this.setState({ error });
@@ -128,7 +129,8 @@ class SignInGoogleBase extends Component {
           })
           .then(() => {
             this.setState({ error: null });
-            this.props.history.push(ROUTES.HOME);
+            this.props.history.push(ROUTES.EDUCATION_SELECT);
+            // this.props.history.push(ROUTES.HOME);
           })
           .catch(error => {
             this.setState({ error });
