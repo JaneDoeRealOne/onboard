@@ -7,7 +7,6 @@ import * as ROUTES from '../../constants/routes';
 import './signin.css';
 import DarkLogo from '../assets/KYH-dark-logo.png';
 import Dropdown from '../Dropdown/Dropdown';
-import { Button } from '../Button/Button';
 
 
 const SignInPage = () => (
@@ -16,8 +15,8 @@ const SignInPage = () => (
     <FirebaseContext.Consumer>
       {firebase => <SignInForm firebase={firebase} />}
     </FirebaseContext.Consumer>
-    <Dropdown />
-    <SignInGoogle />
+    {/* <Dropdown />
+    <SignInGoogle /> */}
   </>
 );
 
@@ -91,12 +90,12 @@ class SignInFormBase extends Component {
           {/* <br />
           <Dropdown /> */}
           <div className='btn--section'>
-            <Button
+            <button
               disabled={isInvalid}
               type="submit"
               className='form--btn'>
               Logga in
-            </Button>
+            </button>
             {error && <p>{error.message}</p>}
           </div>
           {/* <div className='btn--section'>

@@ -21,46 +21,57 @@ const NavigationAuth = () => (
   <div className='navbar-container'>
     <ul className='nav-wrap'>
       <li className='nav-item'>
-        <Link to={ROUTES.HOME}>Hem</Link>
+        <Link to='/' className='nav-link' >
+          <div>
+            <img src={Logo} className='logo' alt='logotype' />
+          </div>
+        </Link>
       </li>
-      <li className='nav-item'>
-        <Link to={ROUTES.FAQ}>FAQ</Link>
-      </li>
-      <li className='nav-item'>
-        <Link to={ROUTES.NEWS}>Nyheter</Link>
-      </li>
-      <li className='nav-item'>
-        <SignOutButton />
-      </li>
+      <div className='link-wrapper'>
+        <li className='nav-item'>
+          <Link
+            className='nav-link'
+            to={ROUTES.HOME}>Hem</Link>
+        </li>
+        <li className='nav-item'>
+          <Link
+            className='nav-link'
+            to={ROUTES.FAQ}>FAQ</Link>
+        </li>
+        <li className='nav-item'>
+          <Link
+            className='nav-link'
+            to={ROUTES.NEWS}>Nyheter</Link>
+        </li>
+      </div>
+      <SignOutButton />
     </ul>
   </div>
 );
 
 const NavigationNonAuth = () => (
-  <ul className='nav-wrap'>
-    <li className='nav-item'>
-      <Link to='/' className='navbar-logo' >
-        <div>
-          <img src={Logo} className='logo' alt='logotype' />
-        </div>
-      </Link>
-    </li>
-    <li className='nav-item'>
-      <Link to={ROUTES.SIGN_IN}>
-        <button
-          className='nav-button'
-          style={{
-            backgroundColor: 'transparent',
-            color: '#fff',
-            padding: '13px 20px',
-            border: '1px solid var(--primary)',
-            transition: 'all 0.3s ease-out',
-            fontSize: '18px',
-            underline: 'none'
-          }}>LOGGA IN</button>
-      </Link>
-    </li>
-  </ul>
+  <div className='navbar-container'>
+    <ul className='nav-wrap'>
+
+      <li className='nav-item'>
+        <Link to='/' className='navbar-logo'>
+          <div>
+            <img src={Logo} className='logo' alt='logotype' />
+          </div>
+        </Link>
+      </li>
+      <li className='nav-item'>
+        <Link
+          className='nav-link btn'
+          to={ROUTES.SIGN_IN}>
+          <button
+            className='signin-button loginbtn'
+          >LOGGA IN</button>
+        </Link>
+      </li>
+
+    </ul>
+  </div>
 );
 
 export default Navigation;

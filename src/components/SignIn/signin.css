@@ -60,17 +60,14 @@
 }
 
 .form--btn {
-  width: 45%;
+  width: 100%;
   margin-top: 2rem;
   height: 3rem;
-  cursor: pointer;
+  /* cursor: pointer; */
   text-transform: uppercase;
-  padding: 0 2rem;
-  margin: 40px auto 40px;
-  font-size: 1rem;
-  font-weight: bold;
-  background-color: #f187368f;
-  color: rgb(5, 5, 5);
+  font-size: 1.2rem;
+  background-color: #f97918c9;
+  color: #fff;
   border: none;
   border-radius: 0.3rem;
   box-shadow: 0 6px 20px #93939354;
@@ -78,8 +75,7 @@
 
 .form--btn:hover {
   cursor: pointer;
-  -webkit-box-shadow: 0 0 3px 3px #f97918bb;
-  box-shadow: 0 0 3px 3px #f97918bb;
+  background-color: #f97918bb;
 }
 
 .button-google {
@@ -105,7 +101,7 @@
 }
 
 .googleButtonText {
-  color: blue;
+  color: #e2e1e197;
   font-weight: bolder;
 }
 
