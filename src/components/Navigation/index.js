@@ -20,13 +20,7 @@ const Navigation = () => (
 const NavigationAuth = () => (
   <div className='navbar-container'>
     <ul className='nav-wrap'>
-      <li className='nav-item'>
-        <Link to='/' className='nav-link' >
-          <div>
-            <img src={Logo} className='logo' alt='logotype' />
-          </div>
-        </Link>
-      </li>
+     
       <div className='link-wrapper'>
         <li className='nav-item'>
           <Link
