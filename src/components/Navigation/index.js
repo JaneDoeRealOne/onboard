@@ -21,7 +21,7 @@ const NavigationAuth = () => (
   <div className='navbar-container'>
     <ul className='nav-wrap'>
       <li className='nav-item'>
-        <Link to='/' className='nav-link' >
+        <Link to='/'>
           <div>
             <img src={Logo} className='logo' alt='logotype' />
           </div>
@@ -52,7 +52,6 @@ const NavigationAuth = () => (
 const NavigationNonAuth = () => (
   <div className='navbar-container'>
     <ul className='nav-wrap'>
-
       <li className='nav-item'>
         <Link to='/' className='navbar-logo'>
           <div>
@@ -69,7 +68,6 @@ const NavigationNonAuth = () => (
           >LOGGA IN</button>
         </Link>
       </li>
-
     </ul>
   </div>
 );
