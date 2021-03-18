@@ -7,8 +7,7 @@ import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
 import { AuthUserContext } from '../Session';
 import Logo from '../assets/KYH-logo.png';
-import userEvent from '@testing-library/user-event';
-import Education from '../Educations';
+
 
 
 const Navigation = () => (

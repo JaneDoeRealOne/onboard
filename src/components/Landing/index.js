@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button } from '../Button/Button';
+// import { Button } from '../Button/Button';
+import '../Button/Button.css';
 import './landing.css';
 import '../../index.css';
 
@@ -11,14 +12,21 @@ function Landing() {
       <h2>Du har blivit antagen till en utbildning på yrkeshögskolan KYH</h2>
       {/* </div> */}
       <div className='hero-btns'>
+        {/* <Button
+          className='btns'
+          buttonstyle='btn--outline'
+          buttonsize='btn--large'
+        >
+          KOM IGÅNG
+        </Button> */}
         <a href='https://www.youtube.com/embed/euiGHk8dIPI' target="_blank" rel="noopener noreferrer" >
-          <Button
-            className='btns'
-            buttonStyle='btn--outline'
+          <button
+            className='btns movie--btn'
+            buttonStyle='btn--primary'
             buttonSize='btn--large'
           >
             SE VIDEO <i className='far fa-play-circle' />
-          </Button>
+          </button>
         </a>
       </div>
     </div>
