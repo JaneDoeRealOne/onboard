@@ -33,7 +33,7 @@ function Dropdown() {
       ...theme,
       colors: {
         ...theme.colors,
-        primary25: 'lightGray',
+        primary25: '#e2e1e197',
         primary: '#fea562c9',
       },
     };
@@ -61,22 +61,24 @@ function Dropdown() {
   }
 
   return (
-    <div className='dropdown-container'>
-      <h1>Vilken utbildning är du antagen till?</h1>
-      <div className='react-select-container'>
-        {/* <Select
+    <div className='dropdown-wrapper'>
+      <section className='dropdown-section'>
+        <h1>Vilken utbildning är du antagen till?</h1>
+        <div className='react-select-section'>
+          {/* <Select
           styles={customStyles}
           options={optionsCity}
           theme={customTheme}
           placeholder='Välj din utbildningsort'
         /> */}
-        <Select
-          styles={customStyles}
-          options={optionsEducation}
-          theme={customTheme}
-          placeholder='Välj din utbildning'
-        />
-      </div>
+          <Select
+            styles={customStyles}
+            options={optionsEducation}
+            theme={customTheme}
+            placeholder='Välj din utbildning'
+          />
+        </div>
+      </section>
     </div>
   )
 }

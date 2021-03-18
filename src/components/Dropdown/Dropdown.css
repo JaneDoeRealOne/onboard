@@ -1,17 +1,25 @@
-.react-select-container {
+.dropdown-wrapper {
+  width: 100%;
+  display: flex; 
+  justify-content: center; 
+
+}
+
+.dropdown-section {
+  display: flex;
+  left: 0;
+  flex-direction: column;
+}
+
+.react-select-section {
   display: flex; 
   justify-content: center;
   align-items: center;
   margin-top: 20px;
   background-color: #fff;
-  margin: 0 452px;
+  /* width: 400px; */
+  /* margin: 0 452px; */
   border-radius: 5px;
-}
-
-.dropdown-container {
-  display: flex;
-  left: 0;
-  flex-direction: column;
 }
 
 .dropdown-container h1{
