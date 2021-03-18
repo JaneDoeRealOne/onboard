@@ -3,6 +3,7 @@ import Select from 'react-select';
 import './Dropdown.css';
 import '../../index.css';
 import '../Button/Button.css';
+import { faBlackberry } from '@fortawesome/free-brands-svg-icons';
 
 // const optionsCity = [
 //   { value: 'eskilstuna', label: 'Eskilstuna' },
@@ -48,10 +49,12 @@ function Dropdown() {
       padding: 20,
     }),
     control: () => ({
-      width: 500,
+      width: 590,
+      padding: '5px',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'flexStart',
+      backgroundColor: '#e2e1e197'
     }),
     singleValue: (provided, state) => {
       const opacity = state.isDisabled ? 1 : 0.5;
@@ -60,6 +63,7 @@ function Dropdown() {
       return { ...provided, opacity, transition };
     }
   }
+
 
   return (
     <div className='dropdown-wrapper'>
@@ -82,14 +86,17 @@ function Dropdown() {
         <button
           style={{
             // width: '100%',
-            height: '50px',
-            fontSize: '20px',
+            height: '3remx',
+            fontSize: '1.2rem',
             marginTop: '30px',
             display: 'flex',
             justifyContent: 'center',
-            cursor: 'pointer'
-            // marginLeft: '30%',
-            // marginRight: '30%'
+            cursor: 'pointer',
+            backgroundColor: '#f97918c9',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '0.3rem',
+            boxShadow: '0 6px 20px #93939354'
           }}
           className='btn--outline'
           id='emoji'>{'\u2728'} KLAR {'\u2728'}
