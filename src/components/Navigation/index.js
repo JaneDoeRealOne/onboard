@@ -7,6 +7,8 @@ import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
 import { AuthUserContext } from '../Session';
 import Logo from '../assets/KYH-logo.png';
+import userEvent from '@testing-library/user-event';
+import Education from '../Educations';
 
 
 const Navigation = () => (
@@ -28,6 +30,11 @@ const NavigationAuth = () => (
         </Link>
       </li>
       <div className='link-wrapper'>
+        <li className='nav-item'>
+          <Link
+            className='nav-link'
+            to={ROUTES.EDUCATION_SELECT}>Utbildning</Link>
+        </li>
         <li className='nav-item'>
           <Link
             className='nav-link'
