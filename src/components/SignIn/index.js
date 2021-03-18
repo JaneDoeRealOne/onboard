@@ -13,7 +13,9 @@ const SignInPage = () => (
   <>
     {/* <SignInForm /> */}
     <FirebaseContext.Consumer>
-      {firebase => <SignInForm firebase={firebase} />}
+      {firebase => <SignInForm firebase={firebase}>
+        <SignInGoogle />
+      </SignInForm>}
     </FirebaseContext.Consumer>
     {/* <Dropdown />
     <SignInGoogle /> */}

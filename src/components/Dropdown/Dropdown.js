@@ -2,6 +2,7 @@ import React from 'react';
 import Select from 'react-select';
 import './Dropdown.css';
 import '../../index.css';
+import '../Button/Button.css';
 
 // const optionsCity = [
 //   { value: 'eskilstuna', label: 'Eskilstuna' },
@@ -78,6 +79,21 @@ function Dropdown() {
             placeholder='Välj din utbildning'
           />
         </div>
+        <button
+          style={{
+            // width: '100%',
+            height: '50px',
+            fontSize: '20px',
+            marginTop: '30px',
+            display: 'flex',
+            justifyContent: 'center',
+            cursor: 'pointer'
+            // marginLeft: '30%',
+            // marginRight: '30%'
+          }}
+          className='btn--outline'
+          id='emoji'>{'\u2728'} KLAR {'\u2728'}
+        </button>
       </section>
     </div>
   )

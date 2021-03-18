@@ -22,7 +22,7 @@ function Landing() {
         <a href='https://www.youtube.com/embed/euiGHk8dIPI' target="_blank" rel="noopener noreferrer" >
           <button
             className='btns movie--btn'
-            buttonStyle='btn--primary'
+            buttonStyle='btn--outline'
             buttonSize='btn--large'
           >
             SE VIDEO <i className='far fa-play-circle' />
