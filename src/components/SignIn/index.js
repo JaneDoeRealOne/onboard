@@ -15,7 +15,7 @@ const SignInPage = () => (
     <FirebaseContext.Consumer>
       {firebase => <SignInForm firebase={firebase} />}
     </FirebaseContext.Consumer>
-    <SignInGoogle /> 
+    <SignInGoogle />
   </>
 );
 
@@ -98,7 +98,7 @@ class SignInFormBase extends Component {
             </button>
             {error && <p>{error.message}</p>}
           </div>
-           
+
         </form>
       </section>
     );
