@@ -4,7 +4,6 @@ import './Dropdown.css';
 import '../../index.css';
 import { useState, useEffect } from 'react';
 import '../Button/Button.css';
-// import { faBlackberry } from '@fortawesome/free-brands-svg-icons';
 
 const optionsCity = [
   { value: 'eskilstuna', label: 'Eskilstuna' },
@@ -85,12 +84,6 @@ function Dropdown() {
       <section className='dropdown-section'>
         <h1>Vilken utbildning är du antagen till?</h1>
         <div className='react-select-section'>
-          {/* <Select
-          styles={customStyles}
-          options={optionsCity}
-          theme={customTheme}
-          placeholder='Välj din utbildningsort'
-        /> */}
           <Select
             value={edu}
             styles={customStyles}
@@ -98,7 +91,9 @@ function Dropdown() {
             theme={customTheme}
             placeholder='Välj din utbildning'
             onChange={selectedOption => setEdu(selectedOption)}
-          /><br />
+          />
+        </div>
+        <div className='react-select-section'>
           <Select
             value={loc}
             styles={customStyles}
@@ -108,17 +103,9 @@ function Dropdown() {
             onChange={selectedOption => setLoc(selectedOption)}
           />
         </div>
-        <Select
-          styles={customStyles}
-          options={optionsEducation}
-          theme={customTheme}
-          placeholder='Välj din utbildning'
-        />
-
         <button
           style={{
-            // width: '100%',
-            height: '3remx',
+            height: '3rem',
             fontSize: '1.2rem',
             marginTop: '30px',
             display: 'flex',
