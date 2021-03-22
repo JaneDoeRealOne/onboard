@@ -15,7 +15,6 @@ const SignOutButton = ({ firebase }) => (
             onClick={firebase.doSignOut}
             style={{
               backgroundColor: 'transparent',
-              // width: '70px',
               color: '#fff',
               display: 'flex',
               alignItems: 'flex-end',
