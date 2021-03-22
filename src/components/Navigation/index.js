@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { Button } from '../Button/Button';
 import './Navigation.css';
 import '../../index.css';
 import SignOutButton from '../SignOut';
@@ -22,11 +21,9 @@ const NavigationAuth = () => (
   <div className='navbar-container'>
     <ul className='nav-wrap'>
       <li className='nav-item'>
-        <Link to='/'>
-          <div>
-            <img src={Logo} className='logo' alt='logotype' />
-          </div>
-        </Link>
+        <div>
+          <img src={Logo} className='logo' alt='logotype' />
+        </div>
       </li>
       <div className='link-wrapper'>
         <li className='nav-item'>
