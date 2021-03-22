@@ -123,6 +123,7 @@ class SignInGoogleBase extends Component {
             username: socialAuthUser.user.displayName,
             email: socialAuthUser.user.email,
             roles: [],
+            //educations: [{name: 'Frontend Developer', location: 'KYHS'}]
           })
           .then(() => {
             this.setState({ error: null });

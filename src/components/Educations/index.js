@@ -4,7 +4,10 @@ import '../../index.css';
 import Dropdown from '../Dropdown/Dropdown';
 import './Education.css';
 
+
 function Education() {
+
+
   return (
     <div className='education-container'>
       <Dropdown />
