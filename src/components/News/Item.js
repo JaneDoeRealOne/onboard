@@ -11,7 +11,10 @@ export default styled.div`
   margin: 15px;
   border-radius: 5px;
   border: 2px solid grey;
+
+  &:hover {
+    box-shadow: 3px 3px 10px grey;
+    background-color: rgba(240, 236, 234, 0.973);
+    transition: 0.2s;
+  }
 `;
-
-
- 
