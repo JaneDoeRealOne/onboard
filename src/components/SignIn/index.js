@@ -87,8 +87,6 @@ class SignInFormBase extends Component {
             type="password"
             placeholder="Ange ditt lösenord"
           />
-          {/* <br />
-          <Dropdown /> */}
           <div className='btn--section'>
             <button
               disabled={isInvalid}
@@ -98,8 +96,8 @@ class SignInFormBase extends Component {
             </button>
             {error && <p>{error.message}</p>}
           </div>
-
         </form>
+        Eller ...
       </section>
     );
   }
@@ -145,7 +143,9 @@ class SignInGoogleBase extends Component {
     const { error } = this.state;
 
     return (
-      <form onSubmit={this.onSubmit}>
+      <form
+        className='social-login-section'
+        onSubmit={this.onSubmit}>
         <button type="submit" class="button-google">
           <img src='icons/google.svg' alt='google login' className='googleIcon'></img>
           <span className='googleButtonText'>Logga in med Google</span>
@@ -153,6 +153,7 @@ class SignInGoogleBase extends Component {
 
         {error && <p>{error.message}</p>}
       </form>
+
     );
   }
 }

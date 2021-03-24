@@ -4,7 +4,8 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  /* height: 70vh; */
+  padding: 4rem;
 }
 
 .login--container {
@@ -16,7 +17,8 @@
   justify-content: center;
   border-radius: 0.3rem;
   border: 2px solid #41414198;
-  margin: 2rem 0 5rem 0;
+  margin: 2rem auto 2rem;
+  /* margin: 2rem 0 5rem 0; */
   flex-direction: column;
   padding: 3.5rem;
 }
@@ -54,7 +56,6 @@
 }
 
 .btn--section {
-  /* width: 90%; */
   display: flex;
   justify-content: space-between;
 }
@@ -63,7 +64,6 @@
   width: 100%;
   margin-top: 2rem;
   height: 3rem;
-  /* cursor: pointer; */
   text-transform: uppercase;
   font-size: 1.2rem;
   background-color: #f97918c9;
@@ -78,18 +78,25 @@
   background-color: #f97918bb;
 }
 
+.social-login-section {
+  display: flex; 
+  justify-content: center;
+  background-color: #fce1d097;
+  padding-bottom: 4rem;
+  /* display: flex;
+  flex-direction: column; */
+  width: 100%;
+  /* margin: 40px auto 40px; */
+}
+
 .button-google {
-  cursor: pointer;
-  display: block;
   font-size: 1.3em;
   box-sizing: content-box;
-  margin: 40px auto 40px;
-  width: 25%;
+  width: 30%;
   padding: 15px 20px;
-  border-radius: 10px;
-  border-color: transparent;
+  border-radius: 0.3rem;
+  border: 2px solid #41414198;
   background-color: rgb(235, 237, 245);
-  /* box-shadow: 0px 16px 60px rgba(78, 79, 114, 0.1); */
   box-shadow: 0px 16px 60px rgba(4, 14, 214, 0.08);
   position: relative;
 }

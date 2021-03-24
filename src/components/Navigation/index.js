@@ -67,7 +67,7 @@ const NavigationNonAuth = () => (
           className='nav-link btn'
           to={ROUTES.SIGN_IN}>
           <button
-            className='signin-button loginbtn'
+            className='signin-button'
           >LOGGA IN</button>
         </Link>
       </li>
