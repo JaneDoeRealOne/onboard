@@ -1,0 +1,50 @@
+/* *{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 500;
+} */
+
+.faq-background {
+  background-image: linear-gradient(to bottom, #f97918c9, #fce1d097);
+  width: 100%;
+  /* margin: 5rem; */
+}
+
+.accordion-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 10rem;
+  padding: 2rem;
+  background-color: #fff;
+  color: #2b2b2be7;
+  border-radius: 0.3rem;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px #93939354;
+  border: 2px solid #41414198;
+}
+
+.header {
+  margin: 2rem;
+  text-decoration: underline;
+}
+
+.wrap{
+  color: #353535;
+  margin: 1rem 0;
+  display: flex; 
+  justify-content: space-between;
+  width: 85%;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.dropdown {
+  color: #2d2d2d;
+  font-size: 1.3rem;
+  transition: linear 0.2s ease-out;
+  width: 80%;
+}
+
+.dropdown p{
+  margin: 1rem;
+}

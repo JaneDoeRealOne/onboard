@@ -1,0 +1,28 @@
+.logout-wrapper {
+  list-style: none; 
+}
+
+.logout {
+  text-decoration: none; 
+}
+
+.logout-button {
+  display: flex; 
+  justify-content: flex-end;
+  background-color: transparent;
+  color: #fff;
+  padding: 13px 20px;
+  border: 1px solid var(--primary);
+  transition: all 0.3s ease-out;
+  font-size: 18px;
+  margin-right: 40px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #fff;
+  color: black;
+  cursor: pointer;
+}
+
