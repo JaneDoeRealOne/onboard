@@ -81,11 +81,11 @@
 .button-google {
   cursor: pointer;
   display: block;
-  font-size: 1.3em;
+  font-size: 1.1em;
   box-sizing: content-box;
-  margin: 40px auto 40px;
-  width: 25%;
-  padding: 15px 20px;
+  margin: 12px auto 20px;
+  width: 150%;
+  padding: 10px 10px;
   border-radius: 10px;
   border-color: transparent;
   background-color: rgb(235, 237, 245);
@@ -101,7 +101,7 @@
 }
 
 .googleButtonText {
-  color: #e2e1e197;
+  color: #1a171797;
   font-weight: bolder;
 }
 
@@ -110,7 +110,7 @@
   width: 25px;
   margin-right: 0px;
   position: absolute;
-  left: 30px;
+  left: 25px;
   align-items: center;
 }
 

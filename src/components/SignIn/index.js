@@ -4,6 +4,7 @@ import { compose } from 'recompose';
 import { withFirebase } from '../Firebase';
 import { FirebaseContext } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import { SignUpLink } from '../SignUp';
 import './signin.css';
 import DarkLogo from '../assets/KYH-dark-logo.png';
 // import Education from '../Educations/index';
@@ -15,7 +16,6 @@ const SignInPage = () => (
     <FirebaseContext.Consumer>
       {firebase => <SignInForm firebase={firebase} />}
     </FirebaseContext.Consumer>
-    <SignInGoogle />
   </>
 );
 
@@ -39,8 +39,8 @@ class SignInFormBase extends Component {
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.EDUCATION_SELECT);
-        // this.props.history.push(ROUTES.HOME);
+        // this.props.history.push(ROUTES.EDUCATION_SELECT);
+        this.props.history.push(ROUTES.HOME);
       })
       .catch(error => {
         this.setState({ error });
@@ -98,10 +98,10 @@ class SignInFormBase extends Component {
             </button>
             {error && <p>{error.message}</p>}
           </div>
-          {/* <div className='btn--section'>
-            <SignInGoogle disabled={isInvalid} type="submit" className='form--btn' />
-          </div> */}
+          <br />
+          <SignUpLink />
         </form>
+        <SignInGoogle />
       </section>
     );
   }
@@ -125,11 +125,12 @@ class SignInGoogleBase extends Component {
             username: socialAuthUser.user.displayName,
             email: socialAuthUser.user.email,
             roles: [],
+            //educations: [{name: 'Frontend Developer', location: 'KYHS'}]
           })
           .then(() => {
             this.setState({ error: null });
-            this.props.history.push(ROUTES.EDUCATION_SELECT);
-            // this.props.history.push(ROUTES.HOME);
+            // this.props.history.push(ROUTES.EDUCATION_SELECT);
+            this.props.history.push(ROUTES.HOME);
           })
           .catch(error => {
             this.setState({ error });

@@ -5,6 +5,7 @@ import './Navigation.css';
 import '../../index.css';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
+//import * as ROLES from '../../constants/roles';
 import { AuthUserContext } from '../Session';
 import Logo from '../assets/KYH-logo.png';
 
@@ -21,19 +22,8 @@ const Navigation = () => (
 const NavigationAuth = () => (
   <div className='navbar-container'>
     <ul className='nav-wrap'>
-      <li className='nav-item'>
-        <Link to='/'>
-          <div>
-            <img src={Logo} className='logo' alt='logotype' />
-          </div>
-        </Link>
-      </li>
+      
       <div className='link-wrapper'>
-        <li className='nav-item'>
-          <Link
-            className='nav-link'
-            to={ROUTES.EDUCATION_SELECT}>Utbildning</Link>
-        </li>
         <li className='nav-item'>
           <Link
             className='nav-link'
@@ -49,6 +39,19 @@ const NavigationAuth = () => (
             className='nav-link'
             to={ROUTES.NEWS}>Nyheter</Link>
         </li>
+
+        
+      <li>
+        <Link to={ROUTES.FRONTEND}>Frontend</Link>
+      </li>
+        
+        
+      
+        <li>
+          <Link to={ROUTES.DOTNET}>.NET</Link>
+        </li>
+     
+
       </div>
       <SignOutButton />
     </ul>
