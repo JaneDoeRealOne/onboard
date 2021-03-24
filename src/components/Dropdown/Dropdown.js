@@ -1,5 +1,8 @@
 import React from 'react';
 import Select from 'react-select';
+import { Redirect } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
 import './Dropdown.css';
 import '../../index.css';
 import { useState, useEffect } from 'react';
@@ -49,6 +52,7 @@ function Dropdown() {
     if (edu && loc) {
       localStorage.setItem('eduloc', JSON.stringify({ edu: { ...edu }, loc: { ...loc } }))
       // add the redirect
+      redirectTo();
     }
   }, [edu, loc]);
   // todo: create a mew copo
@@ -56,6 +60,10 @@ function Dropdown() {
   // dont froge tthe redirect
   // createa  new useeffect in the new compo which READS localstorage and puts it in state
   // render accordingly. :)
+
+  function redirectTo() {
+    return <Redirect to="/home" />;
+  }
 
   function customTheme(theme) {
     return {
@@ -116,7 +124,12 @@ function Dropdown() {
             onChange={selectedOption => setLoc(selectedOption)}
           />
         </div>
-        <button
+        
+
+        <Link
+          to={ROUTES.HOME}
+        >
+          <button
           style={{
             height: '3rem',
             fontSize: '1.2rem',
@@ -129,10 +142,13 @@ function Dropdown() {
             border: 'none',
             borderRadius: '0.3rem',
             boxShadow: '0 6px 20px #93939354'
-          }}
+          }}  
+    
+          
           className='btn--outline'
-          id='emoji'>{'\u2728'} KLAR {'\u2728'}
-        </button>
+          id='emoji'> KLAR
+          </button>
+        </Link>
       </section>
     </div>
   )
