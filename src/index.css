@@ -18,7 +18,7 @@
   justify-content: center;
   font-size: 3rem;
   background-image: linear-gradient(to bottom, #f97918c9, #fce1d097), url('./components/assets/office.png');
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-weight: 300;
 }
 
