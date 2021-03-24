@@ -43,7 +43,7 @@ function Footer() {
         </div>
         <div className='contact-section'>
           <p className='contact-text'>Kontakt</p>
-          <a href='https://kyh.se/integritetspolicy/' className='policy'>Integritetspolicy</a>
+          <a href='https://kyh.se/integritetspolicy/' target='_blank' rel='noopener noreferrer' className='policy'>Integritetspolicy</a>
           <span className='copy-text'>&copy; KYH 2021</span>
         </div>
       </div>
