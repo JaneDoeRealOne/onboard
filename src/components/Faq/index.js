@@ -17,25 +17,26 @@ const FaqPage = () => {
   }
 
   return (
-    <IconContext.Provider value={{ color: '#FF8C00', size: '25px' }}>
+    <IconContext.Provider
+      className='faq-background'
+      value={{ color: '#FF8C00', size: '25px' }}>
       <div className='accordion-wrapper'>
-        <div className='accordion-container'>
-          {FaqData.map((item, index) => {
-            return (
-              <>
-                <div className='wrap' onClick={() => toggle(index)} key={index}>
-                  <h1>{item.question}</h1>
-                  <span>{clicked === index ? <FiMinus /> : <FiPlus />}</span>
+        <h1 className='header'>Vanliga frågor!</h1>
+        {FaqData.map((item, index) => {
+          return (
+            <React.Fragment key={index}>
+              <div className='wrap' onClick={() => toggle(index)} key={index}>
+                <h1>{item.question}</h1>
+                <span>{clicked === index ? <FiMinus /> : <FiPlus />}</span>
+              </div>
+              {clicked === index ? (
+                <div className='dropdown'>
+                  <p>{item.answer}</p>
                 </div>
-                {clicked === index ? (
-                  <div className='dropdown'>
-                    <p>{item.answer}</p>
-                  </div>
-                ) : null}
-              </>
-            );
-          })}
-        </div>
+              ) : null}
+            </React.Fragment>
+          );
+        })}
       </div>
     </IconContext.Provider>
   );
