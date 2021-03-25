@@ -7,33 +7,6 @@ import * as ROUTES from '../../constants/routes';
 function HomeCards() {
   return (
     <div className='cards'>
-      {/* <h1>Senaste nytt på KYH</h1>
-      <div className='cards__container'>
-        <div className='cards__wrapper'>
-          <ul className='cards__items'>
-            <Home
-              src='images/produktionsledare.jpg'
-              text='Är du intresserad av hur en vanlig dag ser ut för en produktionsledare?'
-              label='Information'
-              path='/home'
-            />
-            <Home
-              src='images/iot-dev.jpg'
-              text='Har du stort intresse för uppkopplade smarta prylar? Missa då inte vår utbildning Internet Of Things'
-              label='Nyheter'
-              path='/home'
-            />
-             <Home
-              src='images/produktionsledare.jpg'
-              text='Är du intresserad av hur en vanlig dag ser ut för en produktionsledare?'
-              label='Event'
-              path='/home'
-            />
-          </ul>
-        </div>
-       </div>
- */}
-
       <div className='cards__container'>
         <h1>Användbar information</h1>
         <div className='cards__wrapper'>

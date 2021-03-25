@@ -11,7 +11,6 @@ function ExternalHome(props) {
               src={props.src}
               alt='Home'
               className='cards__item__img'
-            // to={props.path}
             />
           </figure>
           <div className='cards__item__info'>

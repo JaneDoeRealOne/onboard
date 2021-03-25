@@ -6,12 +6,10 @@ import { FirebaseContext } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import './signin.css';
 import DarkLogo from '../assets/KYH-dark-logo.png';
-// import Education from '../Educations/index';
 
 
 const SignInPage = () => (
   <>
-    {/* <SignInForm /> */}
     <FirebaseContext.Consumer>
       {firebase => <SignInForm firebase={firebase} />}
     </FirebaseContext.Consumer>
@@ -55,7 +53,6 @@ class SignInFormBase extends Component {
 
   render() {
     const { email, password, error } = this.state;
-    // const { error } = this.state;
     const isInvalid = password === '' || email === '';
 
     return (
