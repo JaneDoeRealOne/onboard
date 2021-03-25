@@ -39,7 +39,7 @@ class SignInFormBase extends Component {
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
-        // this.props.history.push(ROUTES.EDUCATION_SELECT);
+        // this.props.history.push(ROUTES.EDUCATION);
         this.props.history.push(ROUTES.HOME);
       })
       .catch(error => {
@@ -121,7 +121,7 @@ class SignInGoogleBase extends Component {
             username: socialAuthUser.user.displayName,
             email: socialAuthUser.user.email,
             roles: [],
-            //educations: [{name: 'Frontend Developer', location: 'KYHS'}]
+            educations: [{ education: event.target.edu, location: event.target.loc }]
           })
           .then(() => {
             this.setState({ error: null });
@@ -146,7 +146,7 @@ class SignInGoogleBase extends Component {
       <form
         className='social-login-section'
         onSubmit={this.onSubmit}>
-        <button type="submit" class="button-google">
+        <button type="submit" className="button-google">
           <img src='icons/google.svg' alt='google login' className='googleIcon'></img>
           <span className='googleButtonText'>Logga in med Google</span>
         </button>

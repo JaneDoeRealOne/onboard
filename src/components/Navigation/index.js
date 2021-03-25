@@ -29,7 +29,7 @@ const NavigationAuth = () => (
         <li className='nav-item'>
           <Link
             className='nav-link'
-            to={ROUTES.EDUCATION_SELECT}>Utbildning</Link>
+            to={ROUTES.EDUCATION}>Min Utbildning</Link>
         </li>
         <li className='nav-item'>
           <Link

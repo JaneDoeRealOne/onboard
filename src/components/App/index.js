@@ -11,6 +11,7 @@ import HomePage from '../Home';
 import NewsPage from '../News';
 import FaqPage from '../Faq';
 import Education from '../Educations/index';
+// import Onboard from '../Onboard/index';
 import Footer from '../Footer/index';
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
@@ -21,11 +22,12 @@ const App = () => (
     <div>
       <Navigation />
       <Route exact path={ROUTES.LANDING} component={LandingPage} />
-      <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
-      <Route exact path={ROUTES.EDUCATION_SELECT} component={Education} />
-      <Route exact path={ROUTES.HOME} component={HomePage} />
-      <Route exact path={ROUTES.NEWS} component={NewsPage} />
-      <Route exact path={ROUTES.FAQ} component={FaqPage} />
+      <Route path={ROUTES.SIGN_IN} component={SignInPage} />
+      <Route path={ROUTES.EDUCATION} component={Education} />
+      {/* <Route path={ROUTES.ONBOARDING} component={Onboard} /> */}
+      <Route path={ROUTES.HOME} component={HomePage} />
+      <Route path={ROUTES.NEWS} component={NewsPage} />
+      <Route path={ROUTES.FAQ} component={FaqPage} />
       <Footer />
     </div>
   </Router>

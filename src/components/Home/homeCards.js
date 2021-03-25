@@ -2,6 +2,7 @@ import React from 'react';
 import Home from './home';
 import './homeCards.css';
 import ExternalHome from './externalHome';
+import * as ROUTES from '../../constants/routes';
 
 function HomeCards() {
   return (
@@ -67,7 +68,7 @@ function HomeCards() {
               src='images/faq.png'
               text='Om du har några frågor, se vår FAQ-sida.'
               label='FAQ'
-              path='/pages/Faq'
+              path={ROUTES.FAQ}
             />
             <ExternalHome
               src='images/csn.png'

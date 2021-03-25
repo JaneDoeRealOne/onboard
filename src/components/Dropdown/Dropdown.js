@@ -1,8 +1,9 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
 import Select from 'react-select';
 import './Dropdown.css';
 import '../../index.css';
-import { useState, useEffect } from 'react';
 import '../Button/Button.css';
 
 const optionsCity = [
@@ -41,7 +42,7 @@ const optionsEducation = [
   { value: 'programvarutestare', label: 'Programvarutestare' },
 ];
 
-function Dropdown() {
+function Dropdown(props) {
   const [edu, setEdu] = useState(null);
   const [loc, setLoc] = useState(null);
 
@@ -49,6 +50,8 @@ function Dropdown() {
     if (edu && loc) {
       localStorage.setItem('eduloc', JSON.stringify({ edu: { ...edu }, loc: { ...loc } }))
       // add the redirect
+      // this.props.history.push(ROUTES.EDUCATION);
+      redirectTo();
     }
   }, [edu, loc]);
   // todo: create a mew copo
@@ -56,6 +59,10 @@ function Dropdown() {
   // dont froge tthe redirect
   // createa  new useeffect in the new compo which READS localstorage and puts it in state
   // render accordingly. :)
+
+  function redirectTo() {
+    return <Redirect to={ROUTES.EDUCATION} />;
+  }
 
   function customTheme(theme) {
     return {
@@ -76,7 +83,7 @@ function Dropdown() {
       padding: 20,
     }),
     control: () => ({
-      width: 590,
+      minWidth: 550,
       padding: '5px',
       display: 'flex',
       justifyContent: 'center',
@@ -121,6 +128,8 @@ function Dropdown() {
             height: '3rem',
             fontSize: '1.2rem',
             marginTop: '30px',
+            marginLeft: '30px',
+            marginRight: '30px',
             display: 'flex',
             justifyContent: 'center',
             cursor: 'pointer',
@@ -134,7 +143,7 @@ function Dropdown() {
           id='emoji'>{'\u2728'} KLAR {'\u2728'}
         </button>
       </section>
-    </div>
+    </div >
   )
 }
 
