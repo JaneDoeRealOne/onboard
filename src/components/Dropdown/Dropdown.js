@@ -126,9 +126,7 @@ function Dropdown() {
         </div>
         
 
-        <Link
-          to={ROUTES.HOME}
-        >
+        <Link to={ROUTES.HOME}>
           <button
           style={{
             height: '3rem',
@@ -143,10 +141,9 @@ function Dropdown() {
             borderRadius: '0.3rem',
             boxShadow: '0 6px 20px #93939354'
           }}  
-    
-          
           className='btn--outline'
-          id='emoji'> KLAR
+          id='emoji'> 
+          KLAR
           </button>
         </Link>
       </section>
