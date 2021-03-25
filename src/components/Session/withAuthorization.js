@@ -19,9 +19,9 @@ const withAuthorization = condition => Component => {
                 const dbUser = snapshot.val();
 
                 // default empty roles
-                if (!dbUser.roles) {
-                  dbUser.roles = {};
-                }
+                // if (!dbUser.roles) {
+                //   dbUser.roles = {};
+                // }
                 // merge auth and db user
                 authUser = {
                   uid: authUser.uid,
@@ -42,10 +42,10 @@ const withAuthorization = condition => Component => {
 
     componentWillUnmount() {
       this.listener();
-    } 
+    }
 
-    render() { 
-      return ( 
+    render() {
+      return (
         <AuthUserContext.Consumer>
           {authUser =>
             condition(authUser) ? <Component {...this.props} /> : null

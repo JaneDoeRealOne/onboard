@@ -1,0 +1,137 @@
+.login {
+  background-image: linear-gradient(to bottom, #f97918c9, #fce1d097);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  /* height: 70vh; */
+  padding: 4rem;
+}
+
+.login--container {
+  width: 40rem;
+  background-color: #fff;
+  color: #2b2b2be7;
+  box-shadow: 0 6px 20px #93939354;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.3rem;
+  border: 2px solid #41414198;
+  margin: 2rem auto 2rem;
+  /* margin: 2rem 0 5rem 0; */
+  flex-direction: column;
+  padding: 3.5rem;
+}
+
+.logo--container {
+  display: flex;
+  justify-content: center;
+}
+
+.form--logo {
+  height: 6rem;
+}
+
+.form--h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  color: #3a3a3aee;
+  margin-top: 2rem;
+}
+
+.login--container label {
+  padding: 0.5rem 0;
+  padding-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.login--container input {
+  height: 3rem;
+  border: none;
+  background-color: #e2e1e197;
+  border-radius: 0.3rem;
+  padding-left: 0.8rem;
+  box-shadow: insert 0 6px 20px #93939354;
+}
+
+.btn--section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form--btn {
+  width: 100%;
+  margin-top: 2rem;
+  height: 3rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  background-color: #f97918c9;
+  color: #fff;
+  border: none;
+  border-radius: 0.3rem;
+  box-shadow: 0 6px 20px #93939354;
+}
+
+.form--btn:hover {
+  cursor: pointer;
+  background-color: #f97918bb;
+}
+
+.social-login-section {
+  display: flex; 
+  justify-content: center;
+  background-color: #fce1d097;
+  padding-bottom: 4rem;
+  /* display: flex;
+  flex-direction: column; */
+  width: 100%;
+  /* margin: 40px auto 40px; */
+}
+
+.button-google {
+  font-size: 1.3em;
+  box-sizing: content-box;
+  width: 30%;
+  padding: 15px 20px;
+  border-radius: 0.3rem;
+  border: 2px solid #41414198;
+  background-color: rgb(235, 237, 245);
+  box-shadow: 0px 16px 60px rgba(4, 14, 214, 0.08);
+  position: relative;
+}
+
+.button-google:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 3px 3px rgba(66, 133, 244, 0.3);
+  box-shadow: 0 0 3px 3px rgba(66, 133, 244, 0.3);
+}
+
+.googleButtonText {
+  color: #1a171797;
+  font-weight: bolder;
+}
+
+.googleIcon {
+  height: 25px;
+  width: 25px;
+  margin-right: 0px;
+  position: absolute;
+  left: 30px;
+  align-items: center;
+}
+
+.form--link {
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+  margin-top: 1.5rem;
+  color: #2b2b2be7;
+}
+
+@media screen and (max-width: 960px) {
+  .login--container {
+    padding: 40px;
+    max-width: 32rem;
+  }
+}

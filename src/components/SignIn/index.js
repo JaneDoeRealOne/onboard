@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-
 import { withFirebase } from '../Firebase';
+import { FirebaseContext } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import './signin.css';
+import DarkLogo from '../assets/KYH-dark-logo.png';
+// import Education from '../Educations/index';
+
 
 const SignInPage = () => (
-  <div>
-    <h1>SignIn</h1>
-    <SignInForm />
-    <SignInGoogle />  
-  </div>
+  <>
+    {/* <SignInForm /> */}
+    <FirebaseContext.Consumer>
+      {firebase => <SignInForm firebase={firebase} />}
+    </FirebaseContext.Consumer>
+    <SignInGoogle />
+  </>
 );
 
 const INITIAL_STATE = {
@@ -33,9 +39,10 @@ class SignInFormBase extends Component {
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.HOME);
+        this.props.history.push(ROUTES.EDUCATION);
+        //this.props.history.push(ROUTES.HOME);
       })
-        .catch(error => {
+      .catch(error => {
         this.setState({ error });
       });
 
@@ -48,31 +55,50 @@ class SignInFormBase extends Component {
 
   render() {
     const { email, password, error } = this.state;
-
+    // const { error } = this.state;
     const isInvalid = password === '' || email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="email"
-          value={email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          name="password"
-          value={password}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Password"
-        />
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
-
-        {error && <p>{error.message}</p>}
-      </form>
+      <section className='login'>
+        <form
+          className='login--container'
+          onSubmit={this.onSubmit}>
+          <div className='logo--container'>
+            <img
+              src={DarkLogo}
+              className='form--logo'
+              alt='logotype'
+            />
+          </div>
+          <h1 className='form--h1'>Logga in</h1>
+          <label>Email</label>
+          <input
+            name="email"
+            value={email}
+            onChange={this.onChange}
+            type="text"
+            placeholder="Ange din email"
+          />
+          <label>Lösenord</label>
+          <input
+            name="password"
+            value={password}
+            onChange={this.onChange}
+            type="password"
+            placeholder="Ange ditt lösenord"
+          />
+          <div className='btn--section'>
+            <button
+              disabled={isInvalid}
+              type="submit"
+              className='form--btn'>
+              Logga in
+            </button>
+            {error && <p>{error.message}</p>}
+          </div>
+        </form>
+        Eller ...
+      </section>
     );
   }
 }
@@ -95,10 +121,12 @@ class SignInGoogleBase extends Component {
             username: socialAuthUser.user.displayName,
             email: socialAuthUser.user.email,
             roles: [],
+            educations: [{ name: 'Frontend Developer', location: 'KYHS' }]
           })
           .then(() => {
             this.setState({ error: null });
-            this.props.history.push(ROUTES.HOME);
+            this.props.history.push(ROUTES.EDUCATION);
+            //this.props.history.push(ROUTES.HOME);
           })
           .catch(error => {
             this.setState({ error });
@@ -115,15 +143,21 @@ class SignInGoogleBase extends Component {
     const { error } = this.state;
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <button type="submit">Sign In with Google</button>
+      <form
+        className='social-login-section'
+        onSubmit={this.onSubmit}>
+        <button type="submit" className="button-google">
+          <img src='icons/google.svg' alt='google login' className='googleIcon'></img>
+          <span className='googleButtonText'>Logga in med Google</span>
+        </button>
 
         {error && <p>{error.message}</p>}
       </form>
+
     );
   }
 }
- 
+
 const SignInForm = compose(
   withRouter,
   withFirebase,
@@ -137,4 +171,3 @@ const SignInGoogle = compose(
 export default SignInPage;
 
 export { SignInForm, SignInGoogle };
-    

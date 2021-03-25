@@ -1,0 +1,17 @@
+import React from 'react';
+import '../../index.css';
+// import * as ROUTES from '../../constants/routes';
+import Dropdown from '../Dropdown/Dropdown';
+import './education.css';
+
+
+function Education() {
+
+  return (
+    <div className='education-container'>
+      <Dropdown />
+    </div>
+  )
+}
+
+export default Education;
