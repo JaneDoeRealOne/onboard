@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
-import * as ROUTES from '../../constants/routes';
 import Select from 'react-select';
+import { Redirect } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
 import './Dropdown.css';
 import '../../index.css';
 import '../Button/Button.css';
@@ -50,7 +51,6 @@ function Dropdown(props) {
     if (edu && loc) {
       localStorage.setItem('eduloc', JSON.stringify({ edu: { ...edu }, loc: { ...loc } }))
       // add the redirect
-      // this.props.history.push(ROUTES.EDUCATION);
       redirectTo();
     }
   }, [edu, loc]);
@@ -61,7 +61,7 @@ function Dropdown(props) {
   // render accordingly. :)
 
   function redirectTo() {
-    return <Redirect to={ROUTES.EDUCATION} />;
+    return <Redirect to="/home" />;
   }
 
   function customTheme(theme) {
@@ -123,25 +123,36 @@ function Dropdown(props) {
             onChange={selectedOption => setLoc(selectedOption)}
           />
         </div>
-        <button
+
+
+        <Link
           style={{
-            height: '3rem',
-            fontSize: '1.2rem',
-            marginTop: '30px',
-            marginLeft: '30px',
-            marginRight: '30px',
             display: 'flex',
             justifyContent: 'center',
-            cursor: 'pointer',
-            backgroundColor: '#f97918c9',
-            color: '#fff',
-            border: 'none',
-            borderRadius: '0.3rem',
-            boxShadow: '0 6px 20px #93939354'
+            textDecoration: 'none'
           }}
-          className='btn--outline'
-          id='emoji'>{'\u2728'} KLAR {'\u2728'}
-        </button>
+          to={ROUTES.HOME}>
+          <button
+            style={{
+              width: '100%',
+              height: '3rem',
+              fontSize: '1.2rem',
+              marginTop: '30px',
+              marginLeft: '30px',
+              marginRight: '30px',
+              display: 'flex',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              backgroundColor: '#f97918c9',
+              color: '#fff',
+              border: 'none',
+              borderRadius: '0.3rem',
+              boxShadow: '0 6px 20px #93939354'
+            }}
+            className='btn--outline'
+            id='emoji'>{'\u2728'} KLAR {'\u2728'}
+          </button>
+        </Link>
       </section>
     </div >
   )

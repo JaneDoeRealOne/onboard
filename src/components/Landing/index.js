@@ -19,7 +19,7 @@ function Landing() {
         >
           KOM IGÅNG
         </Button> */}
-        <a href='https://www.youtube.com/embed/euiGHk8dIPI' target="_blank" rel="noopener noreferrer" >
+        <a href='https://www.youtube.com/watch?v=-NlyjnM0FwU&t=13s' target="_blank" rel="noopener noreferrer" >
           <button
             className='btns movie--btn'
             buttonstyle='btn--outline'

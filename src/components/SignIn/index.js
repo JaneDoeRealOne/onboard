@@ -39,8 +39,8 @@ class SignInFormBase extends Component {
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
-        // this.props.history.push(ROUTES.EDUCATION);
-        this.props.history.push(ROUTES.HOME);
+        this.props.history.push(ROUTES.EDUCATION);
+        //this.props.history.push(ROUTES.HOME);
       })
       .catch(error => {
         this.setState({ error });
@@ -121,12 +121,12 @@ class SignInGoogleBase extends Component {
             username: socialAuthUser.user.displayName,
             email: socialAuthUser.user.email,
             roles: [],
-            educations: [{ education: event.target.edu, location: event.target.loc }]
+            educations: [{ name: 'Frontend Developer', location: 'KYHS' }]
           })
           .then(() => {
             this.setState({ error: null });
-            // this.props.history.push(ROUTES.EDUCATION_SELECT);
-            this.props.history.push(ROUTES.HOME);
+            this.props.history.push(ROUTES.EDUCATION);
+            //this.props.history.push(ROUTES.HOME);
           })
           .catch(error => {
             this.setState({ error });
